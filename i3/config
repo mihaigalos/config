@@ -84,9 +84,6 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -157,6 +154,9 @@ bar {
 #        status_command i3status
         status_command /home/mihai/git/i3status-provider/i3wm_wrapper.sh
 }
+
+bindsym $mod+space exec i3-keyboard-layout cycle de fr
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 bindsym $mod+p exec i3lock-fancy
 focus_follows_mouse no
 exec --no-startup-id nm-applet
