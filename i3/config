@@ -152,8 +152,11 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
-        status_command i3status #/home/mihai/git/i3status-provider/i3wm_wrapper.sh
+#        status_command i3status
+        status_command /home/mihai/git/i3status-provider/i3wm_wrapper.sh
 }
 bindsym $mod+p exec i3lock-fancy
 focus_follows_mouse no
+exec --no-startup-id nm-applet
