@@ -2,3 +2,4 @@
 
 ln -s $(realpath .xprofile) ~
 ln -s $(realpath i3_config) ~/.config/i3/config
+ln -s $(realpath terminator_config) ~/.config/terminator/config
