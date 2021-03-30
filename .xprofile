@@ -1,2 +1,4 @@
+#! /bin/bash
+
 xrandr --output HDMI-1 --set "Broadcast RGB" "Full"
 xgamma -gamma 0.99 >& /dev/null
