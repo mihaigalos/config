@@ -56,10 +56,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -129,10 +129,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym odiaeresis resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -151,12 +151,15 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 bar {
-#        status_command i3status
-        status_command /home/mihai/git/i3status-provider/i3wm_wrapper.sh
+        #status_command i3status
+        status_command /home/$USER/git/i3status-provider/i3wm_wrapper.sh
 }
 
-bindsym $mod+space exec i3-keyboard-layout cycle de fr
+#bindsym $mod+space exec i3-keyboard-layout cycle de fr
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+#bindsym $mod+p exec i3lock -c 000000
 bindsym $mod+p exec i3lock-fancy
 focus_follows_mouse no
 exec --no-startup-id nm-applet
+exec xautolock -time 2 -locker i3lock-fancy
+exec --no-startup-id /home/$USER/.local/bin/switch_keyboard.sh
