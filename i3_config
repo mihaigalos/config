@@ -162,5 +162,5 @@ bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures
 bindsym $mod+p exec 'lock_when_no_sound'
 focus_follows_mouse no
 exec --no-startup-id nm-applet
-exec xautolock -time 1 -locker lock_when_no_sound
+exec xautolock -time 2 -locker lock_when_no_sound
 exec --no-startup-id /home/$USER/.local/bin/switch_keyboard.sh
